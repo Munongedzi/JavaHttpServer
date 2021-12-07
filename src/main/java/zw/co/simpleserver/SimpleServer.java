@@ -11,6 +11,7 @@ public class SimpleServer {
 
         static final Logger log = Logger.getLogger(String.valueOf(SimpleServer.class));
         public static void main(String args[]) throws IOException {
+
             HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 8001), 0);
             server.createContext("/test", new MyHttpHandler());
             ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
